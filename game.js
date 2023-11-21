@@ -7,8 +7,6 @@ window.onload = function(){
             r += this;
         return r;
     }
-    
-    var asrcd = "toky";
     var startPage = document.getElementById("startMenu");
     startPage.addEventListener("click",startGame)
     function startGame(){
@@ -18,49 +16,42 @@ window.onload = function(){
             startSound.play().catch(function(e){});
             if(bgSound.paused) bgSound.play().catch(function(e){});
             if(runCount == 0){
-            endSound.play().catch(function(e){})
-            hitSound.play().catch(function(e){});
-            successSound.play().catch(function(e){});
-            highScoreSound.play().catch(function(e){});
             runCount++;
             }
         }catch(err){}
     
-    }
-    
+    }    
     var bestScore = 0;
     var runCount = 0;
-    
     var startSound = new Audio();
-    startSound.src = "https://"+asrcd+".000webhostapp.com/snd/whistlestart.ogg";
-    startSound.volume = 0.6;
+    startSound.src = "assets/Whistle.mp3";
+    startSound.volume = 0.8;
     
     var shootSound = new Audio();
-    shootSound.src = "https://"+asrcd+".000webhostapp.com/snd/arrow.ogg";
+    shootSound.src = "assets/arrow.mp3";
+    shootSound.volume = 1;
     
     var hitSound = new Audio();
-    hitSound.src = "https://"+asrcd+".000webhostapp.com/snd/arrowhit.ogg";
+    hitSound.src = "assets/Sniper.mp3";
+    hitSound.volume = 0.3;
     
     var bgSound = new Audio();
-    bgSound.src = "https://"+asrcd+".000webhostapp.com/snd/bg.mp3"//"music2.ogg";
+    bgSound.src = "assets/KGF_chapter 2 (BGM) attitude.mp3";
     bgSound.loop = true;
-    //bgSound.volume = 0.8;
+    bgSound.volume = 0.3;
     
     var endSound = new Audio();
-    endSound.src = "https://"+asrcd+".000webhostapp.com/snd/whistleover.ogg";
-    endSound.volume = 0.6;
+    endSound.src = "assets/Game Over.mp3";
+    endSound.volume = 1;
     
     var successSound = new Audio();
-    successSound.src = "https://"+asrcd+".000webhostapp.com/snd/bell.ogg";
+    successSound.src = "assets/1700556733061x6woeui-voicemaker.in-speech.mp3";
+    successSound.duration = 1;
     
-    var highScoreSound = new Audio();
-    highScoreSound.src = "https://"+asrcd+".000webhostapp.com/snd/crowdcheer.ogg";
-    
-    
+    var mainContainer = document.getElementById("mainContainer");
+
     function loadGame(){
     "use strict";
-    
-    
         var countTimeOut;
         function countTime(){
         var container = document.getElementById("timerDiv");
@@ -74,20 +65,9 @@ window.onload = function(){
         var totalScore = 0;
         var autoMove = false;
     
-    
         var w = window.innerWidth;
         var h = window.innerHeight;
-    
-        if(h > w){
-            document.getElementById("mainContainer").style.transform = "translateX("+(w)+"px).rotate(90deg)";
-            document.getElementById("mainContainer").style.width = h+"px";
-            var nh = h;
-            h = w;
-            w = nh;
-    
-        }
-    
-    
+
         var updatePointArea = document.getElementById("showPoint");
         updatePointArea.style.height = h+"px";
         updatePointArea.style.width = w+"px";
@@ -127,7 +107,7 @@ window.onload = function(){
         c2.width = w;
         var ctx2 = c2.getContext("2d");
     
-        var fwBuilder = function(n,x,y,speed){
+        let fwBuilder=function(n,x,y,speed){
             this.n = n;
             this.x = x;
             this.y = y;
@@ -203,12 +183,12 @@ window.onload = function(){
         // Objects...
     
         var arc = {
-            x:30,
-            y:100,
-            dy:3,
-              r:50,
-              color:"#000",
-              lw:3,
+            x:80,
+            y:30,
+            dy:5.5,
+              r:40,
+              color:"#A52A2A",
+              lw:1,
               start:Math.PI+Math.PI/2,
               end:Math.PI-Math.PI/2
         }
@@ -318,7 +298,6 @@ window.onload = function(){
                                     }
                                     moveArrowCheck = false;
                                     score++;
-                                    //console.log(score);
                                     if(score === 4){
                                         arc.dy = 5;
                                     }
@@ -453,7 +432,7 @@ window.onload = function(){
     
         function move () {
               ctx.clearRect(0,0,w,h);
-              if(arc.y>h-50 || arc.y<50){
+              if(arc.y>h-30 || arc.y<30){
                 arc.dy*=-1;
               }
               arc.y+=arc.dy;
@@ -499,4 +478,3 @@ window.onload = function(){
         },15)
     }
     }
-    //window.onload = setTimeout(loadGame,2000);

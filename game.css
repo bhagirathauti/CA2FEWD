@@ -2,11 +2,31 @@ body {
     margin: 0;
     font-family:monospace;
     text-align:center;
-    height: 500px;
-    width: 500px;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("assets/pexels-miguel-á-padriñán-19670.jpg");
+    background-size: cover;
 }
-
+.name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name input{
+    height: 35px;
+    margin-right: 20px;
+}
+.namee{
+    font-size: 2rem;
+}
+#home{
+    border: 2px solid black;
+    background-color: #fac750;
+    font-size: 22px;
+    padding:9px 10px 5px;
+}
 #mainContainer {
+    background-image: url("assets/pexels-kampus-production-6540677.jpg");
     transform-origin:0% 0%;
     position:absolute;
     width:100%;
@@ -24,7 +44,20 @@ body {
     font-weight:900;
     color:#45f;
 }
-
+#nickname {
+    position:absolute;
+    width: 100%;
+    top:0;
+    left:0;
+    text-align:center;
+    font-size:30px;
+    margin: 0px 0px 10px 0px;
+    font-weight:900;
+    color:#000;
+}
+.home{
+    left: 10%;
+}
 #showPoint {
     position:absolute;
     top:0;
@@ -41,7 +74,7 @@ body {
     font-size:30px;
     font-family:arial;
     opacity:0;
-    transition:top 0.05s linear,left 0.05s linear
+    transition:top 0.1s linear,left 0.1s linear
 }
 
 #animCanvas {
@@ -49,6 +82,7 @@ body {
     top:0;
     left:0;
     z-index:100;
+    color: white;
     border-bottom:1px solid blue;
 }
 
@@ -62,10 +96,11 @@ body {
 }
 
 #startMenu {
+    background-image: url(assets/pexels-kampus-production-6540677.jpg);
+    background-size: cover;
     position:absolute;
     top:0;
     left:0;
-    background:#fff;
     z-index:1000;
     width:100%;
     height:100%;
@@ -79,7 +114,7 @@ body {
 
 #startMenu button {
     font-size:22px;
-    background-color: yellow;
+    background-color: #fac750;
     border:2px solid black;
     padding:10px 30px 5px;
     line-height:20px;
@@ -100,7 +135,7 @@ body {
    left:25%;
    border-radius:20px;
 }
-
+           
 .timer {
    height:8px;
    width:0%;
@@ -109,17 +144,24 @@ body {
    animation-delay:0.5s;
    border-radius:20px;
 }
-
+           
 @keyframes countTime {
    0% {
        width: 100%;
-       background-color: green;
+       background-color: lime;
    }
    50% {
-       background-color:orangered;
+       background-color:yellow;
    }
    100% {
        width: 0%;
        background-color: red;
    }
+}
+
+@media screen and (max-width:1000px){
+    body{
+        height: auto;
+        width: auto;
+    }
 }
