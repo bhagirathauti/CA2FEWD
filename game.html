@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" >
 </head>
 <body>
-    <div class="nav">
-        <div class="score" id="score">SCORE: <span id="scoree"></span></div>
-        <div class="home" id="home"></div>
-        <div class="lives" id="lives"></div>
+   <div class="mainContainer">
+    <canvas id="myCanvas"></canvas>
+    <canvas id="animCanvas"></canvas>
+    <h1 id="score">0</h1>
+    <div id="showPoint">
+        <div id="timerDiv"></div>
+        <p id="arrs">&uarr;</p><span class="u">&uarr; +4</span>
     </div>
+    <div id="startMenu">
+        <h1 id="title">ARCHERY<br>3D</h1>
+        <button id="startBtn">PRESS TO START</button>
+        <h2><span id="best">Best</span></h2>
+    </div>
+   </div>
 </body>
+<script src="game.js"></script>
 </html>

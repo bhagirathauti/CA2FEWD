@@ -1,5 +1,5 @@
 body{
-    background-image: url("pexels-kampus-production-6540677.jpg");
+    background-image: url("assets/pexels-kampus-production-6540677.jpg");
     background-size: cover;
 }
 /* index.html */
@@ -23,9 +23,8 @@ body{
     border-radius: 10px;
     font-size: 5rem;
     height: 100px;
-    width: 500px;
+    width: 550px;
     font-weight: 1000;
-    -webkit-text-stroke: 1px white;
 }
 .buttonPlay{
     font-size: 2rem;
