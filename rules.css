@@ -33,8 +33,7 @@ body{
 }
 
 @media screen and (max-width:1000px){
-
-}.rulesContainer{
+    .rulesContainer{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -66,3 +65,4 @@ body{
     .playBtnDiv{
         padding-bottom: 52px;
     }
+}
