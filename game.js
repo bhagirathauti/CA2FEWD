@@ -1,6 +1,5 @@
 
 window.onload = function(){
-    // Referred from geekforgeeks.com
     String.prototype.repeat =  String.prototype.repeat ||
       function(c){
         var r= '';
@@ -187,7 +186,6 @@ window.onload = function(){
         }
     
         newF();
-        //c2.addEventListener("click",newF)
     
     
         var c = document.getElementById("myCanvas");
@@ -200,7 +198,6 @@ window.onload = function(){
         var checkArrowMoveWithBoard1 = false;
         var checkArrowMoveWithBoard2 = false;
     
-        // Objects...
     
         var arc = {
             x:80,
@@ -241,7 +238,6 @@ window.onload = function(){
             ctx.fillRect(board.x,board.y-board.height/2,board.width,board.height);
             ctx.moveTo(board.x,board.y-15);
             ctx.quadraticCurveTo(board.x-10,board.y,board.x,board.y+15);
-            //ctx.lineTo(10,6);
             ctx.fillStyle = "#FF0000";
             ctx.fill();
             ctx.closePath();
@@ -490,4 +486,3 @@ window.onload = function(){
         },15)
     }
     }
-    
