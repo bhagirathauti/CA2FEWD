@@ -8,6 +8,9 @@ body {
     background-size: cover;
     overflow: hidden;
 }
+#title{
+    margin-left: 20px;
+}
 .name{
     display: flex;
     justify-content: center;
