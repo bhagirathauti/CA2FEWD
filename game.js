@@ -1,5 +1,6 @@
 
 window.onload = function(){
+    // Referred from geekforgeeks.com
     String.prototype.repeat =  String.prototype.repeat ||
       function(c){
         var r= '';
@@ -21,7 +22,7 @@ window.onload = function(){
             }
         }catch(err){}
     
-    }    
+    }   
     var bestScore = 0;
     var runCount = 0;
     var startSound = new Audio();
@@ -48,9 +49,10 @@ window.onload = function(){
     var successSound = new Audio();
     successSound.src = "assets/1700556733061x6woeui-voicemaker.in-speech.mp3";
     successSound.duration = 1;
-    
-    // var mainContainer = document.getElementById("mainContainer");
-    // var getNickname = document.getElementById("nameBox")
+    const rulesBtn = document.getElementById("rulesBtn")
+    rulesBtn.onclick=()=>{
+        window.location.href="./rules.html"
+    }
     var saveBtn = document.getElementById("save")
     function saveToLocalStorage() {
         var inputValue = document.getElementById("inputText").value;
@@ -488,3 +490,4 @@ window.onload = function(){
         },15)
     }
     }
+    
