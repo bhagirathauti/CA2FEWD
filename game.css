@@ -6,6 +6,7 @@ body {
     width: 100vw;
     background-image: url("assets/pexels-miguel-á-padriñán-19670.jpg");
     background-size: cover;
+    overflow: hidden;
 }
 .name{
     display: flex;
@@ -13,11 +14,24 @@ body {
     align-items: center;
 }
 .name input{
+    z-index: 100000;
     height: 35px;
     margin-right: 20px;
 }
 .namee{
     font-size: 2rem;
+}
+#enter{
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:22px;
+    background-color: #fac750;
+    border:2px solid black;
+    padding:10px 30px 5px;
+    line-height:20px;
+    outline:none;
 }
 #home{
     border: 2px solid black;
@@ -26,6 +40,8 @@ body {
     padding:9px 10px 5px;
 }
 #mainContainer {
+    width:100vw;
+    height:100vh;
     background-image: url("assets/pexels-kampus-production-6540677.jpg");
     transform-origin:0% 0%;
     position:absolute;
@@ -40,9 +56,10 @@ body {
     left:0;
     width:100%;
     text-align:center;
+    margin-top: 60px;
     font-size:60px;
     font-weight:900;
-    color:#45f;
+    color:#FF0700;
 }
 #nickname {
     position:absolute;
@@ -51,7 +68,7 @@ body {
     left:0;
     text-align:center;
     font-size:30px;
-    margin: 0px 0px 10px 0px;
+    margin: 30px 0px 10px 0px;
     font-weight:900;
     color:#000;
 }
@@ -79,9 +96,11 @@ body {
 
 #animCanvas {
     position:absolute;
-    top:0;
-    left:0;
-    z-index:100;
+    height: 100vh;
+    width: 100vw;
+     top:0;
+    left:0; 
+    z-index:100; 
     color: white;
     border-bottom:1px solid blue;
 }
@@ -102,8 +121,8 @@ body {
     top:0;
     left:0;
     z-index:1000;
-    width:100%;
-    height:100%;
+    width:100vw;
+    height:100vh;
 }
 
 #startMenu h1 {
@@ -112,17 +131,17 @@ body {
     font-weight:900;
 }
 
-#startMenu button {
+#startMenu h2 {
+    font-size:25px;
+}
+#startBtn{
+    margin-left: 30px;
     font-size:22px;
     background-color: #fac750;
     border:2px solid black;
     padding:10px 30px 5px;
     line-height:20px;
     outline:none;
-}
-
-#startMenu h2 {
-    font-size:25px;
 }
 
 #timerDiv {
@@ -163,5 +182,36 @@ body {
     body{
         height: auto;
         width: auto;
+        overflow: hidden;
+    }
+    .name{
+        flex-direction: column;
+    }
+    .name input{
+        height: 30px;
+        margin-left: 17px;
+    }
+    .namee{
+        font-size: 1.2rem;
+        font-weight: 800;
+    }
+    #enter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        height: 30px;
+        width: 50px;
+    }
+    #startBtn{
+        margin-top: 60px;
+        font-weight: 1000;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    #save{
+        font-size: 1rem;
+        font-weight: 1000;
+        font-family: 'Times New Roman', Times, serif;
+
     }
 }

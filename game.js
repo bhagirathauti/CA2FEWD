@@ -8,7 +8,8 @@ window.onload = function(){
         return r;
     }
     var startPage = document.getElementById("startMenu");
-    startPage.addEventListener("click",startGame)
+    var playBtn = document.getElementById("startBtn");
+    playBtn.addEventListener("click",startGame)
     function startGame(){
         startPage.style.display = "none";
         loadGame();
@@ -48,7 +49,24 @@ window.onload = function(){
     successSound.src = "assets/1700556733061x6woeui-voicemaker.in-speech.mp3";
     successSound.duration = 1;
     
-    var mainContainer = document.getElementById("mainContainer");
+    // var mainContainer = document.getElementById("mainContainer");
+    // var getNickname = document.getElementById("nameBox")
+    var saveBtn = document.getElementById("save")
+    function saveToLocalStorage() {
+        var inputValue = document.getElementById("inputText").value;
+        if (inputValue.trim() !== "") {
+            localStorage.setItem("savedInput", inputValue);
+            alert("Hey Archer ,Your Name is now saved!");
+        } else {
+            alert("Please enter some text before saving.");
+        }
+    }
+    saveBtn.onclick = ()=>{
+        localStorage.clear
+        saveToLocalStorage();
+        var nickname = document.getElementById("nickname")
+        nickname.innerHTML=localStorage.getItem("savedInput")
+    }
 
     function loadGame(){
     "use strict";
@@ -197,13 +215,14 @@ window.onload = function(){
             h:arc.r*2,
               lw:1,
               x:arc.x-25,
-              color:"#000",
+              color:"#A52A2A",
               status:true
         }
     
         var board = {
             x:w-40,
             y:h/2,
+            color:"#A52A2A",
             dy:4,
             height:150,
             width:7
@@ -221,10 +240,10 @@ window.onload = function(){
             ctx.moveTo(board.x,board.y-15);
             ctx.quadraticCurveTo(board.x-10,board.y,board.x,board.y+15);
             //ctx.lineTo(10,6);
-            ctx.fillStyle = "#36e";
+            ctx.fillStyle = "#FF0000";
             ctx.fill();
             ctx.closePath();
-            ctx.fillStyle = "#000";
+            ctx.fillStyle = "#8B4513";
     
             if(board.y >= h || board.y <= 0){
                 board.dy *= -1;
@@ -325,8 +344,6 @@ window.onload = function(){
                                     gameScore.innerHTML = totalScore;
     
                                     animateScore(currentScore,totalArr);
-    
-                                    //board.y += scores;// + Math.floor(Math.random()*20);
                                     boardY = board.y + scores;
                                     if(scores>=0){
                                         boardMove = true;
@@ -334,14 +351,11 @@ window.onload = function(){
                                     else {
                                         boardMove = false;
                                     }
-    
-                                    //this.fy += scores;
                                 }
                                 else updArr(totalArr);
                                     if(totalArr <= 0){
                                         clearInterval(intv);
                                         try{
-                                            //bgSound.pause();
                                             endSound.play().catch(function(e){});
                                         }catch(err){
                                     }
@@ -383,8 +397,6 @@ window.onload = function(){
             }
         }
     
-        // Arrow Move With Board
-    
         Arrow.prototype.moveArrowWithBoard = function(dir) {
             if(this == arrow1){
                 arrow1.fy += board.dy*dir;
@@ -404,7 +416,6 @@ window.onload = function(){
         var moveArrowCheck = false;
         var score = 0;
     
-        // Drawing functions...
     
         function drawArc() {
             ctx.beginPath();
@@ -428,7 +439,6 @@ window.onload = function(){
               ctx.closePath();
         }
     
-        // Moving function...
     
         function move () {
               ctx.clearRect(0,0,w,h);
