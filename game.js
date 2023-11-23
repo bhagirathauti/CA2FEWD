@@ -340,6 +340,7 @@ window.onload = function(){
     
                                     totalScore += currentScore;
                                     gameScore.innerHTML = "Your Score : "+totalScore;
+                                    best.visibility = "block";
     
                                     animateScore(currentScore,totalArr);
                                     boardY = board.y + scores;
@@ -360,7 +361,7 @@ window.onload = function(){
                                     document.getElementById("animCanvas").removeEventListener("click",shoot);
                                     document.body.removeEventListener("keydown",shoot);
                                     startPage.style.display = "block";
-                                    document.getElementById("title").innerHTML = "Your Score<br>"+totalScore;
+                                    document.getElementById("title").innerHTML = "Your Score:<br>"+totalScore;
                                     if(bestScore < totalScore){
                                         bestScore = totalScore;
                                         try{
@@ -369,7 +370,7 @@ window.onload = function(){
                                     }
                                 }
                                 document.getElementById("score").innerHTML = 0;
-                                document.getElementById("best").innerHTML = bestScore;
+                                document.getElementById("best").innerHTML = "Your Best: "+bestScore;
                                 }
     
                                 }
