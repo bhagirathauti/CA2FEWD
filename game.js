@@ -339,7 +339,7 @@ window.onload = function(){
                                     }
     
                                     totalScore += currentScore;
-                                    gameScore.innerHTML = totalScore;
+                                    gameScore.innerHTML = "Your Score : "+totalScore;
     
                                     animateScore(currentScore,totalArr);
                                     boardY = board.y + scores;
