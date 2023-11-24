@@ -164,13 +164,19 @@ body {
 #startBtn{
     margin-left: 30px;
     font-size:22px;
-    margin-right: 600px;
-    background-color: #fac750;
+    background-color: brown;
     border:2px solid black;
     border-radius: 10px;
-    padding:10px 30px 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: white;
+    padding: 10px 10px 10px 10px;
     line-height:20px;
     outline:none;
+}
+#startBtn:hover{
+    background-color: red;
+    transition: ease-in 1s;
 }
 #best{
     margin-left: 30px;
@@ -190,7 +196,7 @@ body {
     outline:none;
 }
 #rulesBtn:hover{
-    background-color: #d28986;
+    background-color: red;
     transition: ease 1s;
 }
 
@@ -222,7 +228,7 @@ body {
 .playy{
     margin-top: 40px;
     font-size:22px;
-    background-color: #fac750;
+    background-color: red;
     border:2px solid black;
     border-radius: 10px;
     padding:10px 30px 5px;
