@@ -265,7 +265,7 @@ body {
     body{
         height: auto;
         width: auto;
-        overflow: hidden;
+        overflow:auto;
     }
     .name{
         display: flex;
@@ -381,7 +381,7 @@ body {
         font-family: 'Times New Roman', Times, serif;
     }
     #btns{
-        padding-bottom: 20px;
+        padding-bottom: 40px;
     }
     
 }
