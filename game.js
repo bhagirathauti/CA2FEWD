@@ -48,6 +48,8 @@ window.onload = function(){
     var successSound = new Audio();
     successSound.src = "assets/1700556733061x6woeui-voicemaker.in-speech.mp3";
     successSound.duration = 1;
+
+    var namee = document.querySelector(".name")
     const rulesBtn = document.getElementById("rulesBtn")
     rulesBtn.onclick=()=>{
         window.location.href="./rules.html"
@@ -238,7 +240,7 @@ window.onload = function(){
             ctx.fillRect(board.x,board.y-board.height/2,board.width,board.height);
             ctx.moveTo(board.x,board.y-15);
             ctx.quadraticCurveTo(board.x-10,board.y,board.x,board.y+15);
-            ctx.fillStyle = "#FF0000";
+            ctx.fillStyle = "#FF5349";
             ctx.fill();
             ctx.closePath();
             ctx.fillStyle = "#8B4513";
@@ -361,6 +363,7 @@ window.onload = function(){
                                     document.getElementById("animCanvas").removeEventListener("click",shoot);
                                     document.body.removeEventListener("keydown",shoot);
                                     startPage.style.display = "block";
+                                    namee.style.display = "none"
                                     document.getElementById("title").innerHTML = "Your Score:<br>"+totalScore;
                                     if(bestScore < totalScore){
                                         bestScore = totalScore;
